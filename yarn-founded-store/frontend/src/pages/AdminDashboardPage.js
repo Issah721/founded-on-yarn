@@ -306,39 +306,39 @@ const AdminDashboardPage = () => {
         <FormTitle>{isEditing ? 'Edit Product' : 'Add New Product'}</FormTitle>
         <form onSubmit={handleSubmit}>
           <FormGroup>
-            <label htmlFor=name>Name*</label>
-            <input type=text name=name id=name value={currentProduct.name} onChange={handleInputChange} required disabled={formSubmitting} />
+            <label htmlFor="name">Name*</label>
+            <input type="text" name="name" id="name" value={currentProduct.name} onChange={handleInputChange} required disabled={formSubmitting} />
           </FormGroup>
           <FormGroup>
-            <label htmlFor=description>Description* (Max 100 chars)</label>
-            <textarea name=description id=description value={currentProduct.description} onChange={handleInputChange} required maxLength=100 disabled={formSubmitting} />
+            <label htmlFor="description">Description* (Max 100 chars)</label>
+            <textarea name="description" id="description" value={currentProduct.description} onChange={handleInputChange} required maxLength={100} disabled={formSubmitting} />
           </FormGroup>
           <FormGroup>
-            <label htmlFor=price>Price*</label>
-            <input type=number name=price id=price value={currentProduct.price} onChange={handleInputChange} required min=0 step=0.01 disabled={formSubmitting}/>
+            <label htmlFor="price">Price*</label>
+            <input type="number" name="price" id="price" value={currentProduct.price} onChange={handleInputChange} required min={0} step={0.01} disabled={formSubmitting} />
           </FormGroup>
           <FormGroup>
-            <label htmlFor=category>Category*</label>
-            <select name=category id=category value={currentProduct.category} onChange={handleInputChange} required disabled={formSubmitting}>
-              <option value=scarf>Scarf</option>
-              <option value=beanie>Beanie</option>
-              <option value=accessory>Accessory</option>
+            <label htmlFor="category">Category*</label>
+            <select name="category" id="category" value={currentProduct.category} onChange={handleInputChange} required disabled={formSubmitting}>
+              <option value="scarf">Scarf</option>
+              <option value="beanie">Beanie</option>
+              <option value="accessory">Accessory</option>
             </select>
           </FormGroup>
           <FormGroup>
-            <label htmlFor=imageUrl>Image URL*</label>
-            <input type=text name=imageUrl id=imageUrl value={currentProduct.imageUrl} onChange={handleInputChange} required disabled={formSubmitting} />
+            <label htmlFor="imageUrl">Image URL*</label>
+            <input type="text" name="imageUrl" id="imageUrl" value={currentProduct.imageUrl} onChange={handleInputChange} required disabled={formSubmitting} />
           </FormGroup>
           <FormGroup>
-            <label htmlFor=size>Size (Optional)</label>
-            <input type=text name=size id=size value={currentProduct.size || ''} onChange={handleInputChange} disabled={formSubmitting} />
+            <label htmlFor="size">Size (Optional)</label>
+            <input type="text" name="size" id="size" value={currentProduct.size || ''} onChange={handleInputChange} disabled={formSubmitting} />
           </FormGroup>
           <FormGroup>
-            <label htmlFor=color>Color (Optional)</label>
-            <input type=text name=color id=color value={currentProduct.color || ''} onChange={handleInputChange} disabled={formSubmitting} />
+            <label htmlFor="color">Color (Optional)</label>
+            <input type="text" name="color" id="color" value={currentProduct.color || ''} onChange={handleInputChange} disabled={formSubmitting} />
           </FormGroup>
-          <Button type=submit disabled={formSubmitting}>{formSubmitting ? (isEditing ? 'Updating...' : 'Adding...') : (isEditing ? 'Update Product' : 'Add Product')}</Button>
-          {isEditing && <Button type=button onClick={resetForm} className=secondary disabled={formSubmitting}>Cancel Edit</Button>}
+          <Button type="submit" disabled={formSubmitting}>{formSubmitting ? (isEditing ? 'Updating...' : 'Adding...') : (isEditing ? 'Update Product' : 'Add Product')}</Button>
+          {isEditing && <Button type="button" onClick={resetForm} className="secondary" disabled={formSubmitting}>Cancel Edit</Button>}
         </form>
       </FormSection>
 
@@ -364,8 +364,8 @@ const AdminDashboardPage = () => {
                   <td>${typeof product.price === 'number' ? product.price.toFixed(2) : String(product.price || '0.00')}</td>
                   <td>{product.category}</td>
                   <td>
-                    <ActionButton className=edit onClick={() => handleEditProduct(product)} disabled={formSubmitting}>Edit</ActionButton>
-                    <ActionButton className=delete onClick={() => handleDeleteProduct(product._id)} disabled={formSubmitting}>Delete</ActionButton>
+                    <ActionButton className="edit" onClick={() => handleEditProduct(product)} disabled={formSubmitting}>Edit</ActionButton>
+                    <ActionButton className="delete" onClick={() => handleDeleteProduct(product._id)} disabled={formSubmitting}>Delete</ActionButton>
                   </td>
                 </tr>
               ))}
