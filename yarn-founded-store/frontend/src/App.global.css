@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5DC; /* Cream background from theme.js */
+  color: #333333; /* Default text color */
+  /* display: flex; Flex on body can be tricky with some CRA setups and 100vh */
+  /* flex-direction: column; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Changed from height to min-height for flexibility */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Make .App take available space */
+}
+
+main {
+  flex-grow: 1; /* Ensure main content pushes footer down */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%; /* Ensure main takes full width */
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #8A9A5B; /* Moss Green for headers from theme.js */
+  margin-top: 0; /* Basic reset for headings */
+}
+
+/* Basic responsive typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Base font size for mobile */
+  }
+  h1, .h1-like { /* Added .h1-like for components styled as h1 */
+    font-size: 2em;
+  }
+  h2, .h2-like {
+    font-size: 1.75em;
+  }
+  h3, .h3-like {
+    font-size: 1.5em;
+  }
+}
+
+/* Placeholder for knitted texture background.
+   Create a low-opacity PNG image (e.g., knitted-texture-light.png) and place it in the /public folder.
+   Then uncomment and adjust the following: */
+/*
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/knitted-texture-light.png');
+  opacity: 0.08; // Adjust opacity as needed
+  z-index: -1; // Place it behind all content
+  pointer-events: none; // Ensure it doesn't interfere with interactions
+}
+*/
